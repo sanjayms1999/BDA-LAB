@@ -1,0 +1,38 @@
+use myDB
+db
+db.createCollection("Student")
+db.Student.drop()
+db.createCollection("Faculty")
+db.createCollection("COE")
+db.createCollection("Library")
+db.createCollection("Admission")
+db.createCollection("College_Festival")
+db.Student.insert({USN:100,StudName:"Ant",Sem:4,Age:25,Branch:"CSE",Gender:"M"})
+db.Student.insert({USN:101,StudName:"Bat",Sem:5,Age:24,Branch:"ISE",Gender:"F"})
+db.Student.insert({USN:102,StudName:"Cat",Sem:6,Age:23,Branch:"ECE",Gender:"M"})
+db.Student.insert({USN:103,StudName:"Dog",Sem:7,Age:22,Branch:"MECH",Gender:"F"})
+
+db.Faculty.insert({_id:1,Fname:"Banana",Dept:"CSE",Age:35,Email:"banana@gmail.com",Subject:"BDA"})
+db.Faculty.insert({_id:2,Fname:"Binod",Dept:"ISE",Age:32,Email:"binod@orkut.com",Subject:"ML"})
+db.Faculty.insert({_id:3,Fname:"Govind",Dept:"MECH",Age:30,Email:"govinda@yahoo.com",Subject:"JCB"})
+db.Faculty.insert({_id:4,Fname:"Danish",Dept:"CIVIL",Age:37,Email:"danishset@gmail.com",Subject:"CEMENT"})
+
+db.COE.insert({_id:1,Ename:"Khan",Dept:"SEE",Age:44,Email:"mynameiskhan@gmail.com",Phno:"9876543210"})
+db.COE.insert({_id:2,Ename:"RCB",Dept:"CIE",Age:50,Email:"eesalacupnamde@gmail.com",Phno:"1234567890"})
+db.COE.insert({_id:3,Ename:"CSK",Dept:"QUIZ",Age:36,Email:"oldisgold@gmail.com",Phno:"1357924680"})
+db.COE.insert({_id:4,Ename:"KKR",Dept:"SEE",Age:41,Email:"shahrukh@gmail.com",Phno:"2468135790"})
+
+db.Library.insert({_id:1,BookName:"Secret Seven",BookNum:420,Author:"ABCD",Category:"InterestLess",Copies:10})
+db.Library.insert({_id:2,BookName:"HOW to fix",BookNum:840,Author:"CSK",Category:"Cricket",Copies:5})
+db.Library.insert({_id:3,BookName:"How to lose",BookNum:210,Author:"RCB",Category:"ESCN",Copies:20})
+db.Library.insert({_id:4,BookName:"Hit Wicket",BookNum:960,Author:"Hardhik Pnadya",Category:"CoffeeWith Karan",Copies:40})
+
+db.Admission.insert({_id:1,Name:"RockStar",Type:"CET",Marks:87,Age:20,Branch:"CSE"})
+db.Admission.insert({_id:2,Name:"DuniyaSoma",Type:"COMEDK",Marks:90,Age:18,Branch:"ISE"})
+db.Admission.insert({_id:3,Name:"Charlie",Type:"MNGT",Marks:81,Age:21,Branch:"ECE"})
+db.Admission.insert({_id:4,Name:"Bhairati Ranagal",Type:"CET",Marks:100,Age:19,Branch:"MECH"})
+
+db.College_Festival.insert({_id:1,Name:"Hackathon",Dept:"CSE",Coordinator:"Asha",Fees:500,Phno:"9876543210"})
+db.College_Festival.insert({_id:2,Name:"Treasure Hunt",Dept:"ECE",Coordinator:"Kiran",Fees:250,Phno:"9844444403"})
+db.College_Festival.insert({_id:3,Name:"Hit the Flag",Dept:"ISE",Coordinator:"MOdi",Fees:100,Phno:"9876556781"})
+db.College_Festival.insert({_id:4,Name:"Eat Food",Dept:"ECE",Coordinator:"Akshay",Fees:800,Phno:"1234567890"})
