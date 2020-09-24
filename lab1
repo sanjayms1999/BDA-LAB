@@ -1,0 +1,44 @@
+db.createCollection("Student")
+db.createCollection("Faculty")
+db.createCollection("COE")
+db.createCollection("Library")
+db.createCollection("Admission")
+db.createCollection("Festival")
+show collections
+db.Student.insertMany([{_id:1,StudName:"Raju",Usn:1BM17CS100,Sem:4,Branch:"CSE",Cgpa:9},
+{_id:2,StudName:"vani",Usn:1BM17CS101,Sem:5,Branch:"ISE",Cgpa:8.6},
+{_id:3,StudName:"Ramesh",Usn:1BM17CS102,Sem:6,Branch:"ECE",Cgpa:9.2},
+{_id:4,StudName:"Geetha",Usn:1BM17CS103,Sem:7,Branch:"MECH",Cgpa:8.8}])
+db.Student.find()
+
+
+ 
+db.Faculty.insertMany([{_id:1,Name:"pallvi",Department:"CSE",Age:30,email:"pallavi@gmail.com",Subject:"BDA"},
+                   {_id:2,Name:"Latha",Department:"ISE",Age:36,email:"latha@gmail.com",Subject:"TFCS"},
+                   {_id:3,Name:"Raj",Department:"EC",Age:34,email:"raj@gmail.com",Subject:"c++"},
+                   {_id:4,Name:"Ric",Department:"CSE",Age:40,email:"ric@gmail.com",Subject:"Java"}]);
+db.Faculty.find()
+
+db.COE.insertMany([{_id:1,Name:"kumar",Department:"CIE", Age:40,email:"kumar@gmail.com",PhNo:9844031888},
+                   {_id:2,Name:"Ross",Department:"SEE",Age:45,email:"ross@gmail.com",PhNo:9844131888},
+                   {_id:3,Name:"Rahul",Department:"Fasttrack",Age:47,email:"Rahul@gmail.com",PhNo:9844231888},
+                   {_id:4,Name:"Monica",Department:"SEE",Age:38,email:"monica@gmail.com",PhNo:9844331888}]);
+db.COE.find()
+                 
+db.Library.insertMany([{_id:1,BookName:"c++",BookNum:100,Author:"Vyasa",Category:"programming",NoOfCopies:100},
+                   {_id:2,BookName:"Computer Networks",BookNum:1002,Author:"Farouzan",Category:"Computer Science",NoOfCopies:10},
+                   {_id:3,BookName:"Number Theory",BookNum:112,Author:"David Burton",Category:"Mathematics",NoOfCopies:15},
+                   {_id:4,BookName:"Digital Communication",BookNum:206,Author:"Simon",Category:"Telecommunication",NoOfCopies:5}]);
+db.Library.find()
+
+db.Admission.insertMany([{_id:1,Name:"Raju",Type:"DCET",marks:75, Age:20,Branch:"CSE"},
+                   {_id:2,Name:"vani",Type:"CET",marks:85, Age:20,Branch:"ISE"},
+                   {_id:3,Name:"Ramesh",Type:"DCET",marks:80, Age:20,Branch:"ECE"}
+                   {_id:4,Name:"Geetha",Type:"CET",marks:78, Age:20,Branch:"Mech"}}]);
+db.Admission.find()
+
+db.CollegeFest.insertMany([{_id:1,Name:"Dance",Type:"Cultural",Coordinator:"Penny",Department:"EC",Fees:500, Phno:9876567432},
+                   {_id:2,Name:"Quiz",Type:"Academic",Coordinator:"Amy",Department:"ISE",Fees:600, Phno:9843267432},
+                   {_id:3,Name:"Treasure Hunt",Type:"Fiction",Coordinator:"Nam",Department:"CSE",Fees:700, Phno:9876545732},
+                   {_id:4,Name:"Singing",Type:"Cultural",Coordinator:"Shelly",Department:"ETE",Fees:400, Phno:9876523140}]);
+db.CollegeFest.find()
