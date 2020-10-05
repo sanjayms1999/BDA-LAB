@@ -1,0 +1,40 @@
+db.createCollection("Employee")
+db.createCollection("Department")
+db.Employee.insert({_id:"1",Name:"Adam",Role:"Software Engineer"})
+db.Employee.save({_id:"2",Name:"Eve",Role:"Software Tester"})
+db.Employee.insert({_id:"3"})
+db.Employee.update({_id:"3"},{$set:{Name:"Alice",Role:"Data Scientist"}},{upsert:true})
+db.Employee.insert({_id:"4"})
+db.Employee.update({_id:"4"},{$set:{Name:"Bob",Role:"Data Analyst"}},{upsert:false})
+db.Employee.save({_id:"5",Name:"Dave",Role:"IT Support"})
+
+db.Department.insert({_id:"1",Name:"Management"})
+db.Department.save({_id:"2",Name:"HR"})
+db.Department.insert({_id:"3"})
+db.Department.update({_id:"3"},{$set:{Name:"Testing"}},{upsert:true})
+db.Department.insert({_id:"4"})
+db.Department.update({_id:"4"},{$set:{Name:"R&D"}},{upsert:false})
+db.Department.save({_id:"5",Name:"Designing"})
+
+db.Employee.update({_id:"3"},{$set:{SecondaryRole:"Data Engineer"}},{upsert:true})
+
+db.Employee.update({_id:"3"},{$unset:{SecondaryRole:"Data Engineer"}},{upsert:true})
+
+db.Employee.find()
+db.Department.find()
+
+db.Employee.update({_id:"1"},{$set:{DeptNum:1000}},{upsert:true})
+db.Employee.update({_id:"2"},{$set:{DeptNum:1001}},{upsert:true})
+db.Employee.update({_id:"3"},{$set:{DeptNum:1002}},{upsert:true})
+db.Employee.update({_id:"4"},{$set:{DeptNum:1003}},{upsert:true})
+db.Employee.update({_id:"5"},{$set:{DeptNum:1004}},{upsert:true})
+db.Employee.find({DeptNum:{$gt:1001, $lt:1005}},{Name:1,DeptNum:1,_id:0})
+ 
+db.Employee.find({Name:/^A/})
+
+db.Employee.update({_id:"1"},{$set:{Age:"45"}},{upsert:true})
+db.Employee.update({_id:"2"},{$set:{Age:"23"}},{upsert:true})
+db.Employee.update({_id:"3"},{$set:{Age:"39"}},{upsert:true})
+db.Employee.update({_id:"4"},{$set:{Age:"25"}},{upsert:true})
+db.Employee.update({_id:"5"},{$set:{Age:"32"}},{upsert:true})
+db.Employee.find({Age:{$gt:"30"}})
